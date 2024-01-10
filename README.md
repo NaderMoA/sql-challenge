@@ -58,6 +58,32 @@ WHERE "Employees".first_name = 'Hercules' and
 
 Q6: List each employee in the Sales department, including their employee number, last name, and first name.
 Answer 6:
+SELECT "Dept_emp".emp_no,
+"Departments".dept_name,
+"Employees".last_name,
+"Employees".first_name
+FROM "Dept_emp"
+INNER JOIN "Departments"
+on "Departments".dept_no = "Dept_emp".dept_no
+INNER JOIN "Employees"
+on "Dept_emp".emp_no = "Employees".emp_no
+WHERE "Dept_emp".dept_no IN (SELECT "Departments".dept_no from "Departments"
+WHERE "Departments".dept_name = 'Sales');
 
+Q7: List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
+Answer 7:
+SELECT "Employees".emp_no,
+"Employees".last_name,
+"Employees".first_name,
+"Departments".dept_name
+FROM "Employees"
+INNER JOIN "Dept_emp"
+on "Employees".emp_no = "Dept_emp".emp_no
+INNER JOIN "Departments"
+on "Departments".dept_no = "Dept_emp".dept_no
+WHERE "Departments".dept_name = 'Sales' OR  "Departments".dept_name = 'Development'
+
+Q8: List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
+Answer 8:
 
 
