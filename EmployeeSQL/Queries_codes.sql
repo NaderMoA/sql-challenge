@@ -3,10 +3,10 @@ Select employees.emp_no,
 employees.first_name,
 employees.last_name,
 employees.sex,
-"Salaries".salary
+salaries.salary
 From employees
-Inner Join "Salaries"
-on "Salaries".emp_no = employees.emp_no
+Inner Join salaries
+on salaries.emp_no = employees.emp_no
 
 --Q2
 select employees.first_name,
