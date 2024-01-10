@@ -11,8 +11,9 @@ From "Employees"
 Inner Join "Salaries"
 on "Salaries".emp_no = "Employees".emp_no
 
-Q2: select "Employees".first_name,
+Q2: List the first name, last name, and hire date for the employees who were hired in 1986.
 Answer 2:
+select "Employees".first_name,
 "Employees".last_name,
 "Employees".hire_date
 from "Employees"
