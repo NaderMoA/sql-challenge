@@ -36,7 +36,28 @@ on "Titles".title_id = "Employees".emp_title_id
 
 Q4: List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
 Answer 4:
+select "Employees".emp_no,
+"Employees".first_name,
+"Employees".last_name,
+"Dept_emp".dept_no,
+"Departments".dept_name
+FROM "Employees"
+INNER JOIN "Dept_emp"
+on "Dept_emp".emp_no = "Employees".emp_no
+INNER Join "Departments"
+on "Departments".dept_no = "Dept_emp".dept_no
 
+Q5: List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
+Answer 5:
+SELECT "Employees".first_name,
+"Employees".last_name,
+"Employees".sex
+FROM "Employees"
+WHERE "Employees".first_name = 'Hercules' and 
+"Employees".last_name LIKE 'B%'
+
+Q6: List each employee in the Sales department, including their employee number, last name, and first name.
+Answer 6:
 
 
 
