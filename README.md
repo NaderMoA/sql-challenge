@@ -85,5 +85,9 @@ WHERE "Departments".dept_name = 'Sales' OR  "Departments".dept_name = 'Developme
 
 Q8: List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
 Answer 8:
-
+SELECT "Employees".last_name,
+COUNT("Employees".last_name)as frequency
+FROM "Employees"
+GROUP BY "Employees".last_name
+ORDER BY frequency Desc
 
