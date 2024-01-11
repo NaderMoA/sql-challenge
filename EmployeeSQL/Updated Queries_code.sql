@@ -1,12 +1,12 @@
 --Q1 
-Select employees.emp_no,
-employees.first_name,
-employees.last_name,
-employees.sex,
-salaries.salary
-From employees
-Inner Join salaries
-on salaries.emp_no = employees.emp_no
+Select e.emp_no,
+e.first_name,
+e.last_name,
+e.sex,
+s.salary
+From employees as e
+Inner Join salaries as s
+on s.emp_no = e.emp_no
 
 --Q2
 select first_name,
