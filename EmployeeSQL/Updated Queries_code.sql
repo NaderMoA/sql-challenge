@@ -9,9 +9,9 @@ Inner Join salaries
 on salaries.emp_no = employees.emp_no
 
 --Q2
-select employees.first_name,
-employees.last_name,
-employees.hire_date
+select first_name,
+last_name,
+hire_date
 from employees
 WHERE EXTRACT(YEAR FROM hire_date) = 1986
 
